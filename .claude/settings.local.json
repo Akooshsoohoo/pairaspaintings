@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh auth *)",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --no-src-dir --import-alias=\"@/*\" --yes --no-turbopack)",
+      "Bash(rm index.html style.css)",
+      "Bash(rm -rf images/)",
+      "Read(//c/c/Users/1saha/OneDrive/Desktop/The Mainframe/pairaspaintings/**)",
+      "Bash(rm public/next.svg public/vercel.svg public/file.svg public/globe.svg public/window.svg)",
+      "Bash(mkdir -p public/images/paintings)",
+      "Bash(npm run *)"
+    ]
+  }
+}
