@@ -75,5 +75,5 @@ export function getAvailablePaintings(): Painting[] {
 
 export function formatPrice(price: number | null): string {
   if (price === null) return "Price on request";
-  return `₹${price.toLocaleString("en-IN")}`;
+  return price.toLocaleString("en-IN");
 }

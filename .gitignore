@@ -1,5 +1,8 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# Raw photo assets — not for git, add processed copies to public/images/paintings/
+Ma_s Art/
+
 # dependencies
 /node_modules
 /.pnp

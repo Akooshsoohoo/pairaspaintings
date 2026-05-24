@@ -10,10 +10,10 @@ export default function HomePage() {
       {/* Hero */}
       <section className="bg-cream py-24 px-6 text-center">
         <h1 className="font-serif text-6xl text-charcoal mb-4 tracking-wide">
-          Debasree Paira
+          Paira&apos;s Paintings
         </h1>
         <p className="font-sans text-charcoal/60 text-lg tracking-widest uppercase mb-8">
-          Original Paintings · Acrylics · Watercolours · Oils
+          Original Paintings by Debasree Saha
         </p>
         <Link
           href="/gallery"
@@ -47,11 +47,8 @@ export default function HomePage() {
       <section className="bg-parchment py-20 px-6">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="font-serif text-4xl text-charcoal mb-6">About the Artist</h2>
-          {/* TODO: Replace with real bio (2–3 sentences) */}
           <p className="font-sans text-charcoal/70 leading-relaxed text-lg">
-            Debasree Paira is a painter whose work draws on the landscapes, textures,
-            and light of West Bengal. Her paintings explore the quiet beauty of everyday
-            moments — morning light on water, monsoon clouds, the warmth of terracotta.
+            PLACEHOLDER
           </p>
           <Link
             href="/about"

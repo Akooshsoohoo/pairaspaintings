@@ -4,7 +4,7 @@ const CONTACT_EMAIL = "your-email@example.com";
 export default function ContactButton({ paintingTitle }: { paintingTitle: string }) {
   const subject = encodeURIComponent(`Interested in "${paintingTitle}"`);
   const body = encodeURIComponent(
-    `Hello Debasree,\n\nI am interested in purchasing "${paintingTitle}". Could you please provide more details?\n\nThank you.`
+    `Hello,\n\nI am interested in purchasing "${paintingTitle}". Could you please provide more details?\n\nThank you.`
   );
 
   return (

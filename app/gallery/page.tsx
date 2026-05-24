@@ -4,7 +4,7 @@ import { paintings } from "@/data/paintings";
 
 export const metadata: Metadata = {
   title: "Gallery",
-  description: "Browse all original paintings by Debasree Paira.",
+  description: "Browse all original paintings by Debasree Saha.",
 };
 
 export default function GalleryPage() {

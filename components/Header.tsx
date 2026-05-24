@@ -19,7 +19,7 @@ export default function Header() {
           href="/"
           className="font-serif text-2xl tracking-wide text-charcoal hover:text-bark transition-colors"
         >
-          Debasree Paira
+          Paira&apos;s Paintings
         </Link>
         <nav>
           <ul className="flex gap-8">

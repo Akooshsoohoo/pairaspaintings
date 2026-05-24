@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Painting } from "@/data/paintings";
-import { formatPrice } from "@/data/paintings";
 
 export default function PaintingCard({ painting }: { painting: Painting }) {
   return (
@@ -22,13 +21,6 @@ export default function PaintingCard({ painting }: { painting: Painting }) {
             Sold
           </div>
         )}
-      </div>
-      <div className="p-4">
-        <h3 className="font-serif text-xl text-charcoal">{painting.title}</h3>
-        <p className="text-sm text-charcoal/60 font-sans mt-0.5">{painting.medium}</p>
-        <p className="text-sm font-sans font-medium text-bark mt-2">
-          {formatPrice(painting.price)}
-        </p>
       </div>
     </Link>
   );

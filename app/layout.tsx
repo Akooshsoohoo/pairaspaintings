@@ -19,11 +19,10 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Debasree Paira — Original Paintings",
-    template: "%s | Debasree Paira",
+    default: "Paira's Paintings",
+    template: "%s | Paira's Paintings",
   },
-  description:
-    "Original paintings by Debasree Paira — acrylics, watercolours, and oils available for purchase.",
+  description: "Original paintings by Debasree Saha.",
 };
 
 export default function RootLayout({

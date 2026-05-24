@@ -5,7 +5,7 @@ const CONTACT_EMAIL = "your-email@example.com";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Get in touch with Debasree Paira about paintings and commissions.",
+  description: "Get in touch with Debasree Saha about paintings and commissions.",
 };
 
 export default function ContactPage() {
@@ -35,13 +35,7 @@ export default function ContactPage() {
 
       <div className="mt-20 pt-12 border-t border-bark/20 text-left">
         <h2 className="font-serif text-3xl text-charcoal mb-4">Commissions</h2>
-        {/* TODO: Replace with real commission policy */}
-        <p className="font-sans text-charcoal/70 leading-relaxed">
-          I occasionally accept commissions for original paintings. To enquire, please
-          email with your subject, preferred size, and any reference images. A 50% deposit
-          is required to begin work, with the remainder due on completion. Typical
-          turnaround is 4–8 weeks depending on the piece.
-        </p>
+        <p className="font-sans text-charcoal/70 leading-relaxed">PLACEHOLDER</p>
       </div>
     </div>
   );
