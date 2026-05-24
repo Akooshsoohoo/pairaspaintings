@@ -1,63 +1,78 @@
 export interface Painting {
   id: string;
   slug: string;
-  title: string;
-  year: number;
-  medium: string;
-  dimensions: string;
-  price: number | null;
-  description: string;
   available: boolean;
-  featured: boolean;
-  imagePath: string;
+  images: {
+    scan: string;
+    couch: string;
+    distance: string;
+  };
 }
 
-// Add one object per painting. slug becomes the URL: /paintings/your-title
-// Put image files in public/images/paintings/ — filename must match imagePath.
-// Set featured: true to show the painting on the homepage.
-// Set price: null to show "Price on request" instead of a number.
+// Has separate couch + distance images
+function p(slug: string): Painting {
+  return {
+    id: slug,
+    slug,
+    available: true,
+    images: {
+      scan: `/images/paintings/${slug}-scan.jpg`,
+      couch: `/images/paintings/${slug}-couch.jpg`,
+      distance: `/images/paintings/${slug}-distance.jpg`,
+    },
+  };
+}
+
+// Scan only — all three point to the scan image
+function s(slug: string): Painting {
+  const scan = `/images/paintings/${slug}-scan.jpg`;
+  return { id: slug, slug, available: true, images: { scan, couch: scan, distance: scan } };
+}
+
+// New paintings without a flat scan — couch image used as scan; has real distance
+function pNew(slug: string): Painting {
+  const couch = `/images/paintings/${slug}-scan.jpg`;
+  return {
+    id: slug,
+    slug,
+    available: true,
+    images: {
+      scan: couch,
+      couch,
+      distance: `/images/paintings/${slug}-distance.jpg`,
+    },
+  };
+}
+
 export const paintings: Painting[] = [
+  p("001"), p("002"), p("003"), p("004"), p("005"), p("006"),
+  s("007"),
+  p("008"), p("009"), p("010"), p("011"), p("012"), p("013"),
+  p("014"), p("015"), p("016"), p("017"), p("018"), p("019"),
+  p("020"), p("021"), p("022"), p("023"), p("024"), p("025"),
+  p("026"), p("027"), p("028"), p("029"), p("030"), p("031"),
+  p("032"), p("033"), p("034"), p("035"), p("036"), p("037"),
+  p("038"), p("039"), p("040"), p("041"), p("042"),
+  s("043"), s("044"),
+  // New paintings found only in HEIC — no dedicated flat scan
+  pNew("045"), // woman sitting under tree, orange/purple sari
+  p("046"),    // white flowers in wicker basket — proper scan from IMG_1610
+  pNew("047"), // hibiscus on dark background
+  pNew("048"), // yellow canary in flower landscape
+  pNew("049"), // pink roses in blue vase on yellow table
+  pNew("050"), // black cat portrait on yellow/brown
+  pNew("051"), // mallard duck in reed pond
+  pNew("052"), // banana tree with white egrets
+  // Woman by river with orange decorative border — proper scan; distance lost (placeholder = couch)
   {
-    id: "1",
-    slug: "morning-light",
-    title: "Morning Light",
-    year: 2023,
-    medium: "Acrylic on canvas",
-    dimensions: '18" × 24"',
-    price: 12000,
-    description:
-      "Soft morning light filters through a curtain of leaves, casting dappled shadows on still water.",
+    id: "053",
+    slug: "053",
     available: true,
-    featured: true,
-    imagePath: "/images/paintings/morning-light.jpg",
-  },
-  {
-    id: "2",
-    slug: "red-terracotta",
-    title: "Red Terracotta",
-    year: 2022,
-    medium: "Watercolour on paper",
-    dimensions: '12" × 16"',
-    price: null,
-    description:
-      "A study in terracotta forms — old pots stacked against a sun-washed wall. Earthy reds and ochres dominate.",
-    available: true,
-    featured: true,
-    imagePath: "/images/paintings/red-terracotta.jpg",
-  },
-  {
-    id: "3",
-    slug: "monsoon-river",
-    title: "Monsoon River",
-    year: 2024,
-    medium: "Oil on canvas",
-    dimensions: '24" × 30"',
-    price: 18000,
-    description:
-      "Heavy skies and a swollen river in full monsoon flood. The painting captures the charged stillness just before rain.",
-    available: false,
-    featured: true,
-    imagePath: "/images/paintings/monsoon-river.jpg",
+    images: {
+      scan: "/images/paintings/053-scan.jpg",
+      couch: "/images/paintings/053-couch.jpg",
+      distance: "/images/paintings/053-couch.jpg",
+    },
   },
 ];
 
@@ -65,15 +80,6 @@ export function getPaintingBySlug(slug: string): Painting | undefined {
   return paintings.find((p) => p.slug === slug);
 }
 
-export function getFeaturedPaintings(): Painting[] {
-  return paintings.filter((p) => p.featured);
-}
-
 export function getAvailablePaintings(): Painting[] {
   return paintings.filter((p) => p.available);
-}
-
-export function formatPrice(price: number | null): string {
-  if (price === null) return "Price on request";
-  return price.toLocaleString("en-IN");
 }

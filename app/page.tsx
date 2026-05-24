@@ -1,9 +1,9 @@
 import Link from "next/link";
 import PaintingCard from "@/components/PaintingCard";
-import { getFeaturedPaintings } from "@/data/paintings";
+import { paintings } from "@/data/paintings";
 
 export default function HomePage() {
-  const featured = getFeaturedPaintings();
+  const featured = paintings.slice(0, 6);
 
   return (
     <>
@@ -28,7 +28,7 @@ export default function HomePage() {
         <h2 className="font-serif text-4xl text-charcoal mb-12 text-center">
           Selected Works
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
           {featured.map((painting) => (
             <PaintingCard key={painting.id} painting={painting} />
           ))}
