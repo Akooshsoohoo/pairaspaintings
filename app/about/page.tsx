@@ -8,16 +8,17 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="max-w-3xl mx-auto px-6 py-20">
-      <h1 className="font-serif text-5xl text-charcoal mb-4 text-center">About</h1>
-      <p className="font-sans text-charcoal/50 text-sm tracking-widest uppercase mb-16 text-center">
-        Debasree Saha &mdash; &ldquo;Paira&rdquo;, meaning pigeon in Bengali
-      </p>
+      <h1 className="font-serif text-5xl text-charcoal mb-16 text-center">About</h1>
 
       <div className="font-sans text-charcoal/70 leading-relaxed text-lg space-y-6">
         <p>
           I was born in 1967 in Bangladesh. When I was three, our family moved to India,
           to Calcutta, where my aunts and uncle were already living. My grandfather&rsquo;s
           business was in Chittagong. I finished 12th grade in Calcutta.
+        </p>
+        <p>
+          Everyone calls me Paira, it means pigeon in Bengali, my mother gave me that
+          name when I was a baby, and it just stayed with me all my life.
         </p>
         <p>
           In the middle of my first year of college, I got a chance to go to the former
