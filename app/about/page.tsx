@@ -22,7 +22,7 @@ export default function AboutPage() {
         <p>
           In the middle of my first year of college, I got a chance to go to the former
           Soviet Union, Russia. I used to read many storybooks and history, and I am a
-          little adventurous &mdash; I was not scared to go to a new country at the age of
+          little adventurous, I was not scared to go to a new country at the age of
           17.
         </p>
         <p>
