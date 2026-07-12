@@ -17,8 +17,8 @@ export default function AboutPage() {
           business was in Chittagong. I finished 12th grade in Calcutta.
         </p>
         <p>
-          Everyone calls me Paira, it means pigeon in Bengali, my mother gave me that
-          name when I was a baby, and it just stayed with me all my life.
+          I am also called Paira as a second name, it means pigeon in Bengali.
+          My two sisters also have second names after birds.
         </p>
         <p>
           In the middle of my first year of college, I got a chance to go to the former
