@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Lightbox from "@/components/Lightbox";
-import type { Painting } from "@/data/paintings";
+import { imageSize, type Painting } from "@/data/paintings";
 
 export default function PaintingDetailClient({ painting }: { painting: Painting }) {
   const { scan, couch, distance } = painting.images;
@@ -23,7 +23,7 @@ export default function PaintingDetailClient({ painting }: { painting: Painting 
   return (
     <>
       <div
-        className={`grid gap-4 ${
+        className={`grid gap-8 items-start ${
           unique.length === 1
             ? "grid-cols-1 max-w-2xl mx-auto"
             : unique.length === 2
@@ -35,14 +35,14 @@ export default function PaintingDetailClient({ painting }: { painting: Painting 
           <button
             key={src}
             onClick={() => open(i)}
-            className="relative aspect-[4/5] w-full bg-parchment overflow-hidden group cursor-zoom-in"
+            className="group block w-full cursor-zoom-in"
           >
             <Image
               src={src}
               alt=""
-              fill
-              sizes="(max-width: 640px) 100vw, 33vw"
-              className="object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+              {...imageSize(src)}
+              sizes={unique.length === 1 ? "(max-width: 768px) 100vw, 672px" : "(max-width: 640px) 100vw, 33vw"}
+              className="canvas-shadow w-full h-auto"
             />
           </button>
         ))}

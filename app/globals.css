@@ -6,6 +6,9 @@
   --color-charcoal: #2C2416;
   --color-parchment: #EDE8DC;
   --color-sienna: #A0522D;
+  /* Deeper tones used only for ornament and button edges */
+  --color-ochre: #B8893A;
+  --color-madder: #6E2A18;
   --font-serif: var(--font-cormorant), Georgia, serif;
   --font-sans: var(--font-inter), system-ui, sans-serif;
 }
@@ -24,4 +27,62 @@ h1,
 h2,
 h3 {
   font-family: var(--font-serif);
+  text-wrap: balance;
+}
+
+/* ── Alpana ornament ── */
+
+/* Double border around the whole site: solid sienna inside, dotted outside */
+.page-frame {
+  border: 2px solid var(--color-sienna);
+  outline: 1px dotted var(--color-sienna);
+  outline-offset: 4px;
+}
+
+/* Row of petals. `round` scales the tile slightly so the row always ends
+   on a whole petal instead of stopping partway through one. */
+.petal-chain {
+  height: 20px;
+  background: url("/ornaments/petal-chain.svg") round center / 40px 20px;
+}
+
+/* Small serif italic line used above and below headings */
+.kicker {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--color-bark);
+}
+
+/* Primary button: sienna with an inner cream hairline, like a printed border */
+.btn-ornate {
+  display: inline-block;
+  padding: 0.7rem 1.65rem;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-cream);
+  background: var(--color-sienna);
+  border: 1px solid var(--color-madder);
+  box-shadow: inset 0 0 0 3px var(--color-sienna), inset 0 0 0 4px rgb(245 240 232 / 0.55);
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+.btn-ornate:hover {
+  background: var(--color-madder);
+  box-shadow: inset 0 0 0 3px var(--color-madder), inset 0 0 0 4px rgb(245 240 232 / 0.55);
+}
+
+/* Unframed painting: just a soft shadow, like a canvas on a wall */
+.canvas-shadow {
+  box-shadow: 0 1px 2px rgb(44 36 22 / 0.18), 0 8px 22px -6px rgb(44 36 22 / 0.28);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.group:hover .canvas-shadow {
+  transform: translateY(-3px);
+  box-shadow: 0 2px 4px rgb(44 36 22 / 0.18), 0 16px 30px -8px rgb(110 42 24 / 0.38);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .canvas-shadow { transition: none; }
+  .group:hover .canvas-shadow { transform: none; }
 }

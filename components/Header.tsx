@@ -13,23 +13,23 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="bg-cream border-b border-bark/20 sticky top-0 z-50">
-      <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+    <header className="bg-cream sticky top-0 z-50">
+      <div className="max-w-5xl mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-x-8 gap-y-2">
         <Link
           href="/"
-          className="font-serif text-2xl tracking-wide text-charcoal hover:text-bark transition-colors"
+          className="font-serif text-2xl font-semibold tracking-wide text-charcoal hover:text-sienna transition-colors"
         >
           Paira&apos;s Paintings
         </Link>
         <nav>
-          <ul className="flex gap-8">
+          <ul className="flex gap-6 sm:gap-8">
             {navLinks.map(({ href, label }) => (
               <li key={href}>
                 <Link
                   href={href}
-                  className={`text-sm tracking-widest uppercase font-sans transition-colors ${
+                  className={`text-[15px] font-sans transition-colors ${
                     pathname === href
-                      ? "text-bark border-b border-bark pb-0.5"
+                      ? "text-sienna"
                       : "text-charcoal/70 hover:text-charcoal"
                   }`}
                 >
@@ -40,6 +40,7 @@ export default function Header() {
           </ul>
         </nav>
       </div>
+      <div className="petal-chain mx-6" aria-hidden="true" />
     </header>
   );
 }

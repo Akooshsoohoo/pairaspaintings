@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
+  style: ["normal", "italic"],
   variable: "--font-cormorant",
   display: "swap",
 });
@@ -32,10 +33,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${cormorant.variable} ${inter.variable}`}>
-      <body className="min-h-screen flex flex-col">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+      <body className="p-2.5">
+        <div className="page-frame min-h-[calc(100vh-20px)] flex flex-col">
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

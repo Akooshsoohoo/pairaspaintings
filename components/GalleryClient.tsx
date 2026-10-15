@@ -19,18 +19,18 @@ export default function GalleryClient() {
           <button
             key={f}
             onClick={() => setFilter(f)}
-            className={`font-sans text-sm tracking-widest uppercase pb-1 transition-colors ${
+            className={`font-serif italic text-xl pb-0.5 transition-colors ${
               filter === f
-                ? "text-bark border-b border-bark"
+                ? "text-sienna border-b border-sienna"
                 : "text-charcoal/50 hover:text-charcoal"
             }`}
           >
-            {f === "all" ? "All Works" : "Available"}
+            {f === "all" ? "All works" : "Available"}
           </button>
         ))}
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="columns-2 sm:columns-3 lg:columns-4 gap-6 sm:gap-8">
         {displayed.map((painting) => (
           <PaintingCard key={painting.id} painting={painting} />
         ))}

@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 export default function GalleryPage() {
   return (
     <div className="max-w-6xl mx-auto px-6 py-16">
-      <div className="mb-12 text-center">
-        <h1 className="font-serif text-5xl text-charcoal">Gallery</h1>
+      <div className="mb-8 text-center">
+        <h1 className="font-serif font-semibold text-5xl text-charcoal">Gallery</h1>
       </div>
       <GalleryClient />
     </div>

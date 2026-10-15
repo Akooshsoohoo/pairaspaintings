@@ -1,3 +1,5 @@
+import imageSizes from "./imageSizes.json";
+
 export interface Painting {
   id: string;
   slug: string;
@@ -150,4 +152,11 @@ export function getPaintingBySlug(slug: string): Painting | undefined {
 
 export function getAvailablePaintings(): Painting[] {
   return paintings.filter((p) => p.available);
+}
+
+// Pixel size of an image, from data/imageSizes.json (regenerate with
+// `node scripts/image-sizes.mjs`). Falls back to 4:5 for unknown files.
+export function imageSize(src: string): { width: number; height: number } {
+  const [width, height] = (imageSizes as Record<string, number[]>)[src] ?? [800, 1000];
+  return { width, height };
 }

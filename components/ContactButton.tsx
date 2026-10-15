@@ -1,5 +1,4 @@
-// TODO: Replace with the real email address before going live
-const CONTACT_EMAIL = "your-email@example.com";
+const CONTACT_EMAIL = "debasreesaha53@yahoo.com";
 
 export default function ContactButton({ paintingTitle }: { paintingTitle: string }) {
   const subject = encodeURIComponent(`Interested in "${paintingTitle}"`);
@@ -10,7 +9,7 @@ export default function ContactButton({ paintingTitle }: { paintingTitle: string
   return (
     <a
       href={`mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`}
-      className="inline-block bg-bark text-cream font-sans text-sm tracking-widest uppercase px-8 py-3 hover:bg-sienna transition-colors duration-200"
+      className="btn-ornate"
     >
       Interested in this piece? Email me
     </a>
