@@ -18,14 +18,15 @@ export default function HomePage() {
           height={400}
           unoptimized
           preload
-          className="col-start-1 row-start-1 w-[min(560px,100%)] h-auto opacity-55 pointer-events-none select-none"
+          className="col-start-1 row-start-1 w-[min(560px,100%)] h-auto opacity-50 pointer-events-none select-none"
         />
-        <div className="col-start-1 row-start-1 flex flex-col items-center gap-3 text-center">
-          <p className="kicker bg-cream px-3 shadow-[0_0_14px_10px_var(--color-cream)]">Original paintings</p>
-          <h1 className="font-serif font-semibold text-5xl sm:text-7xl leading-none text-charcoal bg-cream px-4 py-1 shadow-[0_0_30px_18px_var(--color-cream)]">
+        {/* Solid cream centre that fades out, so no lotus lines run behind the text */}
+        <div className="col-start-1 row-start-1 flex flex-col items-center gap-3 text-center px-14 py-12 bg-[radial-gradient(closest-side,var(--color-cream)_72%,transparent)]">
+          <p className="kicker text-charcoal/80">Original paintings</p>
+          <h1 className="font-serif font-semibold text-5xl sm:text-7xl leading-none text-charcoal">
             Paira&apos;s Paintings
           </h1>
-          <p className="kicker bg-cream px-3 shadow-[0_0_14px_10px_var(--color-cream)]">by Debasree Saha</p>
+          <p className="kicker text-charcoal/80">by Debasree Saha</p>
           <Link href="/gallery" className="btn-ornate mt-3">
             View gallery
           </Link>
@@ -50,24 +51,6 @@ export default function HomePage() {
             className="font-serif italic text-xl text-sienna hover:text-madder transition-colors border-b border-sienna/40 pb-0.5"
           >
             See all paintings →
-          </Link>
-        </div>
-      </section>
-
-      <div className="petal-chain mx-6" aria-hidden="true" />
-
-      {/* About blurb */}
-      <section className="py-16 px-6">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="font-serif font-semibold text-4xl text-charcoal mb-6">About the Artist</h2>
-          <p className="font-sans text-charcoal/70 leading-relaxed text-lg">
-            PLACEHOLDER
-          </p>
-          <Link
-            href="/about"
-            className="inline-block mt-8 font-serif italic text-xl text-sienna hover:text-madder transition-colors border-b border-sienna/40 pb-0.5"
-          >
-            Read more →
           </Link>
         </div>
       </section>
