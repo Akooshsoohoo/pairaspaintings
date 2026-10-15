@@ -21,7 +21,7 @@ export default function HomePage() {
           className="col-start-1 row-start-1 w-[min(560px,100%)] h-auto opacity-50 pointer-events-none select-none"
         />
         {/* Solid cream centre that fades out, so no lotus lines run behind the text */}
-        <div className="col-start-1 row-start-1 flex flex-col items-center gap-3 text-center px-14 py-12 bg-[radial-gradient(closest-side,var(--color-cream)_72%,transparent)]">
+        <div className="relative z-10 col-start-1 row-start-1 flex flex-col items-center gap-3 text-center px-14 py-12 bg-[radial-gradient(closest-side,var(--color-cream)_72%,transparent)]">
           <p className="kicker text-charcoal/80">Original paintings</p>
           <h1 className="font-serif font-semibold text-5xl sm:text-7xl leading-none text-charcoal">
             Paira&apos;s Paintings
